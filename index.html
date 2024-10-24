@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatrixGlob</title>
+    <!-- Google Font: Orbitron -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0b0c10;
+            color: #fff;
+            height: 100%;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0b0c10 60%, #1f2833 100%);
+        }
+
+        /* Фоновые линии с анимацией */
+        .background-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .line {
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background-color: #00ffcc;
+            opacity: 0.2;
+            animation: moveVertical 10s linear infinite;
+        }
+
+        .line:nth-child(2n) {
+            background-color: #0099ff;
+            animation-direction: reverse;
+        }
+
+        @keyframes moveVertical {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        /* Контейнер для основного контента */
+        .container {
+            text-align: center;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 60px;
+            color: #66fcf1;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            text-shadow: 0 0 30px rgba(102, 252, 241, 0.8), 0 0 60px rgba(102, 252, 241, 0.6);
+            margin-bottom: 50px;
+        }
+
+        /* Стиль для кнопок */
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-buttons a {
+            padding: 15px 40px;
+            background: linear-gradient(90deg, #00ffcc, #0099ff);
+            color: #0b0c10;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 0 20px rgba(0, 195, 255, 0.5), 0 0 30px rgba(0, 153, 255, 0.4);
+        }
+
+        .nav-buttons a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.7), 0 0 40px rgba(0, 153, 255, 0.6);
+        }
+
+        /* Анимация для футуристического фона */
+        .glow-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 250px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 2px solid #66fcf1;
+            box-shadow: 0 0 30px rgba(102, 252, 241, 0.6), 0 0 60px rgba(102, 252, 241, 0.4);
+            animation: pulseGlow 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 30px rgba(102, 252, 241, 0.6), 0 0 60px rgba(102, 252, 241, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 60px rgba(102, 252, 241, 0.8), 0 0 90px rgba(102, 252, 241, 0.6);
+            }
+            100% {
+                box-shadow: 0 0 30px rgba(102, 252, 241, 0.6), 0 0 60px rgba(102, 252, 241, 0.4);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-lines">
+        <div class="line" style="left: 10%;"></div>
+        <div class="line" style="left: 30%;"></div>
+        <div class="line" style="left: 50%;"></div>
+        <div class="line" style="left: 70%;"></div>
+        <div class="line" style="left: 90%;"></div>
+    </div>
+
+    <div class="container">
+        <h1>MatrixGlob</h1>
+
+        <div class="nav-buttons">
+            <a href="#">О нас</a>
+            <a href="#">Готовые модели</a>
+            <a href="#">Создание модели</a>
+            <a href="#">Проверка модели</a>
+            <a href="#">Печать</a>
+        </div>
+    </div>
+
+    <div class="glow-box"></div>
+
+</body>
+</html>
